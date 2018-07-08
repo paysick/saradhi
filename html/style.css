@@ -1,0 +1,123 @@
+body {
+  color: white;
+  background-color: #2b0030;
+  font-family: 'Open Sans', sans-serif;
+  background-image: url(logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.description {
+  border: 1px solid white;
+  padding: 20px;
+}
+
+.container {
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+form {
+  padding: 10px;
+}
+
+.field {
+  margin: 10px 0px;
+}
+
+.field label {
+  display: block;
+  padding-bottom: 2px;
+}
+
+.field input {
+  width: 200px;
+}
+
+.field select {
+  width: 200px;
+}
+
+label {
+  color: white;
+}
+
+.tag-option {
+  display: inline-block;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 5px;
+  cursor: pointer;
+  margin: 5px;
+  min-width: 50px;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.tag-option.selected {
+  background-color: white;
+  color: #2b0030;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #fe6f3e;
+  width: 22px;
+  height: 22px;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+  margin-left: 20px;
+}
+
+.loader.hidden {
+  display: none;
+}
+
+.button {
+  height: 30px;
+  width: 100px;
+  border-radius: 2px;
+  border: none;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

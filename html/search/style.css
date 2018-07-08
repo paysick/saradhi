@@ -1,0 +1,8 @@
+.block {
+  width: 60%;
+  min-width: 800px;
+  border: solid black 1px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+}

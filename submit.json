@@ -1,0 +1,14 @@
+{
+  "uploadDate": "Date", // hidden field
+  "insightDate": "Date", // quarter year, default current
+  "fileName": "", // [required] File upload
+  "analyst": "", // [required] searchField of employees/ids
+  "market": "", // [required] list
+  "vertical": "", // [required] list
+  "advertiser": "", // [required] list
+  "tags": {
+    "primary": [],
+    "secondary": []
+  },
+  "summary": "" // [optional]
+}

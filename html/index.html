@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Insights MIQ-Upload</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+
+<body>
+  <div class="topnav">
+    <a href="index.html">
+      <img class="nav logo" src="//wearemiq.com/wp-content/themes/miq/img/branding/miq-think-beyond.png" height="50px" alt="">
+    </a>
+    <a href="index.html">Upload Page</a>
+    <a href="download.html">Download Page</a>
+  </div>
+
+  <div class="container">
+    <div class="description">
+      <caption>Steps to upload Insights:</caption>
+      <ol>
+        <li>Analysts can upload their insight reports from their pc/laptop using the upload icon.</li>
+        <li>Analysts can select their respective market, vertical, advertiser name and respective tags from the drop-down provided.</li>
+        <li>Analyst can comment/summarize the insight in the text box provided for other analysts reference before downloading.</li>
+      </ol>
+    </div>
+
+    <form id="form">
+      <div class="field">
+        <label for="fileName">Upload File</label>
+        <input type="file" name="fileName" value="" required>
+      </div>
+
+      <div class="field">
+        <label for="analyst">Analyst</label>
+        <select name="analyst" id="analyst" required></select>
+      </div>
+
+      <div class="field">
+        <label for="market">Market</label>
+        <select name="market" id="market" required></select>
+      </div>
+
+      <div class="field">
+        <label for="vertical">Vertical</label>
+        <select name="vertical" id="vertical" required></select>
+      </div>
+
+      <div class="field">
+        <label for="insightDate">Insight Date</label>
+        <input type="date" name="insightDate" id="insightDate" required></input>
+      </div>
+
+      <div class="field">
+        <label for="primaryTag">Primary Tag</label>
+        <div class="tags" name="primaryTag" id="primaryTag"></div>
+      </div>
+
+      <div class="field">
+        <label for="secondaryTag">Secondary Tag</label>
+        <div class="tags" name="secondaryTag" id="secondaryTag"></div>
+      </div>
+
+      <div class="field">
+        <label for="summary">Summary (optional)</label>
+        <textarea name="summary" rows="8" cols="80"></textarea>
+      </div>
+
+      <div class="field" style="display: flex">
+        <button class="button" id="submit-button" type="submit">Submit</button>
+        <div class="loader hidden" id="submit-loader"></div>
+      </div>
+    </form>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+  <script src="/script.js"></script>
+</body>
+
+</html>
