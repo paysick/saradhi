@@ -1,8 +1,122 @@
+body {
+  color: white;
+  background-color: #2b0030;
+  font-family: 'Open Sans', sans-serif;
+  background-image: url(logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0px;
+  font-size: 14px;
+}
+
+select {
+  background: white;
+  width: 150px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+}
+
+button {
+  margin: 0px 20px;
+  width: 150px;
+  height: 20px;
+  margin-top: 18px;
+}
+
+.topnav {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  background: white;
+}
+
+.link {
+  padding-top: 20px;
+}
+
+.topnav a {
+  text-align: center;
+  text-decoration: none;
+  height: 50px;
+  padding: 5px 10px;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.container {
+  min-width: 400px;
+  max-width: 600px;
+  margin: auto;
+  font-size: 14px;
+}
+
 .block {
   width: 60%;
   min-width: 800px;
-  border: solid black 1px;
-  display: flex;
-  justify-content: space-between;
+  /* border: solid black 1px; */
+  /* display: flex;
+  justify-content: space-between; */
   margin: 20px auto;
+}
+
+#block1,
+#block2,
+#block4 {
+  display: flex;
+}
+
+.search {
+  margin: 0px 20px;
+}
+
+.tag-option {
+  display: inline-block;
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 5px;
+  cursor: pointer;
+  margin: 5px;
+  min-width: 50px;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.tag-option.selected {
+  background-color: white;
+  color: #2b0030;
+}
+
+.hide {
+  display: none;
+}
+
+#search-filename {
+  width: 340px;
+}
+
+#search-tags {
+  margin: 0px 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 600px;
+}
+
+td,
+th {
+  text-align: left;
+  padding: 8px;
+}
+
+tr {
+  border: 0px solid #dddddd;
 }

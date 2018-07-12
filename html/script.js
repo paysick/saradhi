@@ -12,6 +12,7 @@ const backendUrl = 'http://localhost:3000';
 //   });
 // }
 
+const advertiserEl = document.getElementById('advertiser');
 const analystEl = document.getElementById('analyst');
 const marketEl = document.getElementById('market');
 const verticalEl = document.getElementById('vertical');
@@ -22,6 +23,20 @@ const submitBtnEl = document.getElementById('submit-button');
 const loaderEl = document.getElementById('submit-loader');
 
 window.onload = function() {
+  axios
+    .get(`${backendUrl}/advertisers`)
+    .then(res => {
+      console.log(res);
+      const advertisers = res.data;
+      advertisers.forEach(emp => {
+        const node = document.createElement('option');
+        node.value = emp;
+        node.innerText = emp;
+        advertiserEl.appendChild(node);
+      });
+    })
+    .catch(err => console.error(err));
+
   axios
     .get(`${backendUrl}/analysts`)
     .then(res => {
@@ -121,16 +136,8 @@ window.onload = function() {
       return;
     }
 
-    data.append('tags', { primary: pTagList, secondary: sTagList });
-
-    // const itr = data.entries();
-    // while (true) {
-    //   itrObj = itr.next();
-    //   console.log(itrObj.value);
-    //   if (itrObj.done === true) {
-    //     break;
-    //   }
-    // }
+    data.append('primaryTags', pTagList);
+    data.append('secondaryTags', sTagList);
 
     axios({
       method: 'post',

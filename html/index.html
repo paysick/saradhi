@@ -11,11 +11,15 @@
 
 <body>
   <div class="topnav">
-    <a href="index.html">
+    <a href="/">
       <img class="nav logo" src="//wearemiq.com/wp-content/themes/miq/img/branding/miq-think-beyond.png" height="50px" alt="">
     </a>
-    <a href="index.html">Upload Page</a>
-    <a href="download.html">Download Page</a>
+    <div class="link">
+      <a href="/">Upload Page</a>
+    </div>
+    <div class="link">
+      <a href="/search/">Download Page</a>
+    </div>
   </div>
 
   <div class="container">
@@ -32,6 +36,11 @@
       <div class="field">
         <label for="fileName">Upload File</label>
         <input type="file" name="fileName" value="" required>
+      </div>
+
+      <div class="field">
+        <label for="advertiser">Advertiser</label>
+        <select name="advertiser" id="advertiser" required></select>
       </div>
 
       <div class="field">

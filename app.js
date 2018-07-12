@@ -26,6 +26,10 @@ app.get('/', function(req, res) {
   res.send('Hello World');
 });
 
+app.get('/advertisers', (req, res) => {
+  res.json(advertisers);
+});
+
 app.get('/analysts', (req, res) => {
   res.json(analysts);
 });
@@ -47,7 +51,7 @@ app.get('/verticals', (req, res) => {
 });
 
 app.get('/insights', (req, res) => {
-  mongo.getAll(docs => {
+  mongo.get(req.query, docs => {
     res.json(docs);
   });
 });
@@ -58,7 +62,10 @@ app.post('/insightRepo', (req, res) => {
 
   form.parse(req, function(err, fields, files) {
     const insight = Object.assign({}, fields, { file: files });
-    mongo.insert(fields, res => console.log(res));
+    insight.primaryTags = fields.primaryTags.split(',');
+    insight.secondaryTags = fields.secondaryTags.split(',');
+    delete insight.file.fileName._writeStream;
+    mongo.insert(insight, res => console.log(res));
     res.writeHead(200, { 'content-type': 'text/plain' });
     res.write('received upload:\n\n');
     res.end(util.inspect({ fields: fields, files: files }));

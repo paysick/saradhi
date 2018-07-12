@@ -5,59 +5,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <title>Insight Search</title>
 </head>
 
 <body>
-  <h1>Insights</h1>
-  <div class="block">
-    <input type="text">
-    <!-- <label for="vertical">Vertical</label> -->
-    <select name="vertical" id="search-vertical">
-      <option value="something">something</option>
-    </select>
-    <button>filters</button>
-    <!-- <label for="sortBy">Sort By</label> -->
-    <select name="sortBy" id="search-sortBy">
-      <option value="something">something</option>
-    </select>
-  </div>
-  <div>
-    <div class="block">
-      <select name="market" id="search-market">
-        <option value="something">something</option>
-      </select>
-      <select name="advertiser" id="search-advertiser">
-        <option value="something">something</option>
-      </select>
-      <select name="analyst" id="search-analyst">
-        <option value="something">something</option>
-      </select>
+  <div class="topnav">
+    <a href="/">
+      <img class="nav logo" src="//wearemiq.com/wp-content/themes/miq/img/branding/miq-think-beyond.png" height="50px" alt="">
+    </a>
+    <div class="link">
+      <a href="/">Upload Page</a>
     </div>
-    <div class="block">
-      <div id="search-tags">
-        <div>Primary Tags</div>
-        <div>Secondary Tags</div>
+    <div class="link">
+      <a href="/search/">Download Page</a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="block" id="block1">
+      <div class="search">
+        <label for="vertical">Vertical</label>
+        <select name="vertical" id="search-vertical">
+        </select>
+      </div>
+      <button id="btn-filter">Filters</button>
+      <div class="search">
+        <label for="sortBy">Sort By</label>
+        <select name="sortBy" id="search-sortBy">
+          <option value="insightName">Insight Name</option>
+          <option value="uploadDate">Upload Date</option>
+          <option value="analyst">Analyst</option>
+        </select>
       </div>
     </div>
+    <div id="search-filter" class="hide">
+      <div class="block" id="block2">
+        <div class="search">
+          <label for="market">Market</label>
+          <select name="market" id="search-market">
+          </select>
+        </div>
+        <div class="search">
+          <label for="advertiser">Advertiser</label>
+          <select name="advertiser" id="search-advertiser">
+          </select>
+        </div>
+        <div class="search">
+          <label for="analyst">Analyst</label>
+          <select name="analyst" id="search-analyst">
+          </select>
+        </div>
+      </div>
+      <div class="block" id="block3">
+        <div id="search-tags">
+          <div>Primary Tags</div>
+          <div class="tags" name="primaryTag" id="primaryTag"></div>
+          <div>Secondary Tags</div>
+          <div class="tags" name="secondaryTag" id="secondaryTag"></div>
+        </div>
+      </div>
+    </div>
+    <div class="block" id="block4">
+      <div class="search">
+        <label for="filename">FileName</label>
+        <input type="text" name="filename" id="search-filename">
+      </div>
+      <button id="btn-search">Search</button>
+    </div>
+    <div class="block">
+      <table>
+        <tr>
+          <th>Insight Name</th>
+          <th>Upload Date</th>
+          <th>Analyst</th>
+          <th>Tags</th>
+        </tr>
+        <tbody id="search-result">
+        </tbody>
+      </table>
+    </div>
   </div>
-  <div class="block">
-    <table>
-      <thead>
-        <th>Insight Name</th>
-        <th>Upload Date</th>
-        <th>Analyst</th>
-        <th>Tags</th>
-      </thead>
-      <tbody>
-        <td>asdffas</td>
-        <td>asfasdd</td>
-        <td>asfasdd</td>
-        <td>asfasdd</td>
-      </tbody>
-    </table>
-  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>

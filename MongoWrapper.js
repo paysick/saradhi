@@ -40,6 +40,37 @@ module.exports = class MongoWrapper {
     });
   }
 
+  get(data, callback) {
+    const query = {};
+    if (data.vertical) {
+      query.vertical = data.vertical;
+    }
+    if (data.analyst) {
+      query.analyst = data.analyst;
+    }
+    if (data.advertiser) {
+      query.advertiser = data.advertiser;
+    }
+    if (data.market) {
+      query.market = data.market;
+    }
+    if (data.primaryTags) {
+      query.primaryTags = { $all: data.primaryTags };
+    }
+    if (data.secondaryTags) {
+      query.secondaryTags = { $all: data.secondaryTags };
+    }
+    if (data.filename) {
+      query['file.fileName.name'] = { $regex: data.filename, $options: 'i' };
+      // query['file.fileName.name'] = data.filename;
+    }
+
+    this.collection.find(query).toArray(function(err, docs) {
+      console.log('Found the following records');
+      callback(docs);
+    });
+  }
+
   close() {
     this.client.close();
   }
